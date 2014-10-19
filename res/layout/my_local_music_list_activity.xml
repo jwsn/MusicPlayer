@@ -1,0 +1,131 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/my_local_screen"
+    >
+<LinearLayout 
+    	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+    	android:orientation="vertical"
+    >
+    
+    <RelativeLayout
+        android:id="@+id/mylocal_playingButtonLayout"  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"
+        android:background="@drawable/song_item_bg" 
+	  >	
+
+		<ImageButton
+		    android:id="@+id/mylocal_backbutton"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentLeft="true"
+		    android:layout_centerVertical="true"
+		    android:background="@drawable/back_button" />
+        <TextView
+            android:id="@+id/mylocal_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="本地音乐"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="35dip" />
+        <ImageButton
+		    android:id="@+id/mylocal_next_page_button"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentRight="true"
+		    android:layout_centerVertical="true"
+		    android:background="@drawable/next_page_button" />
+	</RelativeLayout>
+
+	
+    <ListView 
+		android:id = "@+id/mylocalmusiclistview"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent" 
+		android:layout_weight="1"
+		android:divider="@drawable/listview_line" 
+		android:dividerHeight="20px"
+		android:paddingLeft="15px"
+		android:drawSelectorOnTop="false" />
+<!--  
+	<ListView 
+		android:id="@id/android:list"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent" 
+		android:layout_weight="3" 
+		android:drawSelectorOnTop="false" />
+--> 		
+	<RelativeLayout
+        android:id="@+id/mylocal_ButtonLayout"  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content" 
+        android:background="@drawable/song_item_bg"
+        android:layout_below = "@+id/mylocalmusiclistview"> 
+	  >
+	     <ImageButton
+		    android:id="@+id/mylocal_playingbutton"
+		    android:layout_height="wrap_content"
+		    android:layout_width="wrap_content"
+		    android:background= "@drawable/playing_button"
+		    />
+	     <LinearLayout
+             android:id="@+id/mylocal_Button_Layout"  
+             android:layout_width="wrap_content"  
+             android:layout_height="wrap_content"  
+             android:layout_toRightOf="@+id/mylocal_playingbutton" > 
+
+	     
+		    <ImageButton
+		        android:id="@+id/mylocal_previous"
+		    	android:layout_height="wrap_content"
+		    	android:layout_width="wrap_content"
+                android:layout_marginLeft="10dip"
+		    	android:background= "@drawable/pre_button"
+	    	/>
+		
+			<ImageButton
+		    	android:id="@+id/mylocal_pause_or_start"
+		    	android:layout_height="wrap_content"
+		    	android:layout_width="wrap_content"
+		    	android:layout_centerHorizontal ="true"
+                android:layout_marginLeft="10dip"
+		    	android:layout_toRightOf = "@+id/mylocal_previous"
+		    	android:background= "@drawable/play_button"
+		    />
+		
+			<ImageButton
+		    	android:id="@+id/mylocal_next"
+		    	android:layout_height="wrap_content"
+		    	android:layout_width="wrap_content"
+		    	android:layout_alignBaseline = "@+id/mylocal_pause_or_start"
+		    	android:layout_toRightOf = "@+id/mylocal_pause_or_start"
+                android:layout_marginLeft="10dip"
+		    	android:background= "@drawable/next_button"
+	    	/>
+
+
+		 </LinearLayout>
+
+        <RelativeLayout
+    		android:layout_width="match_parent"
+    		android:layout_height="wrap_content"
+            android:layout_below="@+id/mylocal_Button_Layout"
+            android:layout_toRightOf="@+id/mylocal_playingbutton">
+	     <TextView
+	         android:id="@+id/mylocal_song_name_text"
+	         android:layout_width="wrap_content"
+	         android:layout_height="30dp"
+	         android:layout_centerHorizontal="true"
+	         android:text="没有播放中的歌曲"
+	         android:textAppearance="?android:attr/textAppearanceLarge" />
+        </RelativeLayout>
+	</RelativeLayout>
+	
+
+ </LinearLayout>
+</RelativeLayout>

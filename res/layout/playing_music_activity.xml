@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@drawable/playing_screen"
+    >
+
+	<RelativeLayout
+        android:id="@+id/playingButtonLayout"  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"
+        android:background="@drawable/song_item_bg" 
+	  >	
+
+		<!--  
+		<ImageButton
+		    android:id="@+id/playing_playmode"
+		    android:layout_height="wrap_content"
+		    android:layout_width="wrap_content"
+		    android:layout_alignBaseline = "@+id/playing_next"
+		    android:layout_toRightOf = "@+id/playing_next"
+		    android:background= "@drawable/playmode_normal"
+		    />
+		    
+		    
+		     
+		    -->
+
+		<ImageButton
+		    android:id="@+id/backbutton"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentLeft="true"
+		    android:layout_centerVertical="true"
+		    android:background="@drawable/back_button" />
+		
+        <TextView
+            android:id="@+id/music_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_toLeftOf="@+id/my_collect"
+            android:layout_toRightOf="@+id/backbutton"
+            android:text="没有播放中的歌曲"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+			<ImageButton
+			    android:id="@+id/my_collect"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_alignParentRight="true"
+			    android:layout_alignParentTop="true"
+			    android:background="@drawable/notcollect" />
+	</RelativeLayout>
+	
+	<RelativeLayout
+	    android:id="@+id/playlistLayout"
+        android:layout_width="fill_parent"  
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/playingButtonLayout"
+	  >	
+	  <TextView
+	        android:id="@+id/lrc_size_text"
+	        android:layout_width="wrap_content"
+	        android:layout_height="30dp"
+	        android:layout_marginTop="10dip"
+	        android:layout_alignParentLeft="true"
+	        android:text="左右拉动调整歌词大小"
+	        android:textAppearance="?android:attr/textAppearanceLarge"
+	        android:textColor="#ff000000"
+	        android:visibility="gone" />
+	  
+	    <ImageButton
+	        android:id="@+id/playing_list"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentTop="true"
+	        android:background="@drawable/playing_list_button" />
+	</RelativeLayout>
+	
+    <RelativeLayout
+    	android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:layout_marginTop="40dip"
+    	android:layout_below="@+id/playingButtonLayout"
+   		android:layout_above="@+id/seekbarLayout" 
+   		android:layout_gravity="center">
+			
+		<com.example.musicplayer.lrc.LrcView  
+    		android:id="@+id/song_lrc_text"  
+      		android:layout_width="match_parent"  
+        	android:layout_height="match_parent"/>
+		
+	  	<SeekBar
+	        android:id="@+id/include_lrc_seekbar"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_centerVertical="false"
+	        android:layout_toLeftOf="@+id/lrc_size_button"
+	        android:progressDrawable="@drawable/progress_bar"
+	        android:thumb="@drawable/progress_run"
+	        android:visibility="gone" />
+		<RelativeLayout
+	    	android:id="@+id/playinglistLayout"
+	    	android:layout_width="match_parent"
+	    	android:layout_height="match_parent"
+	    	android:layout_marginRight="40dip"
+	    	android:layout_marginLeft="30dip"
+	    	android:layout_alignParentRight="true"
+	    	android:layout_alignParentTop="true"
+	    	android:background="@drawable/playinlist_back_groung" 
+	    	android:visibility="gone">
+	    
+	        <TextView
+	        	android:id="@+id/playing_list_text"
+	        	android:layout_width="wrap_content"
+	        	android:layout_height="30dp"
+	        	android:layout_marginTop="10dip"
+	        	android:layout_alignParentLeft="true"
+	        	android:layout_alignParentRight="true"
+	        	android:text="播放队列："
+	        	android:textAppearance="?android:attr/textAppearanceLarge"
+	        	android:textColor="#ff000000" />
+	    
+	   			<ListView
+	        	android:id="@+id/playingmusiclistview"
+	        	android:layout_width="match_parent"
+	        	android:layout_height="match_parent"
+	        	android:layout_alignParentLeft="true"
+	        	android:layout_below="@+id/playing_list_text"
+	        	android:layout_weight="1"
+	        	android:layout_marginRight="20dip"
+	        	android:drawSelectorOnTop="false"
+	        	android:paddingLeft="15px" /> 
+		</RelativeLayout>
+
+		<ImageButton
+		    android:id="@+id/lrc_size_button"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentRight="true"
+		    android:layout_alignParentTop="true"
+		    android:background="@drawable/lrc_size"
+		    android:descendantFocusability="blocksDescendants" />
+
+	</RelativeLayout>
+	    
+  <!--  <ScrollView  
+   		android:id="@+id/lrcScrollView"  
+      	android:layout_width="match_parent"  
+        android:layout_height="wrap_content" 
+        android:background = "@drawable/playing_song_info"
+   		android:layout_below="@+id/playingButtonLayout"
+   		android:layout_above="@+id/seekbarLayout"
+        > 
+ 
+       <TextView  
+           	android:layout_width="wrap_content"  
+           	android:layout_height="wrap_content"  
+          	android:layout_gravity="center"  
+            android:text="没找到歌词"  
+            android:id = "@+id/song_lrc_text"
+           	android:textAppearance="?android:attr/textAppearanceLarge" />  
+   </ScrollView>  
+-->
+	
+	<RelativeLayout  
+	   	android:background="@drawable/song_item_bg"  
+		android:id="@+id/seekbarLayout" 
+		android:layout_width="match_parent"  
+		android:layout_height="wrap_content"  
+		android:layout_alignParentBottom="true"
+	     >  
+
+		<SeekBar
+		    android:id="@+id/audioTrack"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_centerVertical="false"
+		    android:progressDrawable="@drawable/progress_bar"
+		    android:thumb="@drawable/progress_run" />
+  
+		<TextView  
+			android:id="@+id/current_time_text"  
+			android:layout_width="wrap_content"  
+			android:layout_height="wrap_content"  
+			android:layout_below="@+id/audioTrack"  
+			android:text="0:25" />  
+
+        <TextView  
+			android:id="@+id/final_time_text"  
+			android:layout_width="wrap_content"  
+			android:layout_height="wrap_content"  
+			android:layout_alignParentRight="true"  
+			android:layout_below="@id/audioTrack"  
+		
+			android:text="3:59" />  
+			
+		<LinearLayout
+            android:id="@+id/Playing_Button_Layout"  
+            android:layout_width="fill_parent"  
+            android:layout_height="wrap_content"  
+            android:layout_below="@id/current_time_text" > 
+			<ImageButton
+		    	android:id="@+id/playing_previous"
+		    	android:layout_height="wrap_content"
+		    	android:layout_width="wrap_content"
+		    	android:background= "@drawable/pre_button"
+	    	/>
+		
+			<ImageButton
+		    	android:id="@+id/playing_pause_or_start"
+		    	android:layout_height="wrap_content"
+		    	android:layout_width="wrap_content"
+		    	android:layout_centerHorizontal ="true"
+		    	android:layout_marginLeft="50dip"
+		    	android:layout_toRightOf = "@+id/playing_previous"
+		    	android:layout_alignBaseline = "@+id/playing_previous"
+		    	android:background= "@drawable/play_button"
+			/>
+		
+			<ImageButton
+		    	android:id="@+id/playing_next"
+		    	android:layout_height="wrap_content"
+		    	android:layout_width="wrap_content"
+		    	android:layout_marginLeft="50dip"
+		    	android:layout_alignBaseline = "@+id/playing_previous"
+		    	android:layout_toRightOf = "@+id/playing_pause_or_start"
+		    	android:background= "@drawable/next_button"
+	    	/>
+					
+
+		</LinearLayout>
+	</RelativeLayout>
+	
+
+	<!--  
+	<include
+	    android:id="@+id/include_lrc_seekbar"
+	    android:layout_alignParentLeft="true"
+	    android:layout_below="@+id/playingButtonLayout"
+	    android:layout_above="@+id/song_lrc_text" 
+	    android:layout_marginTop="15dp"
+	    layout="@layout/lrc_font_seekbar" />-->
+   	
+</RelativeLayout>

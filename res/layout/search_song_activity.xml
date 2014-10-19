@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+      android:background ="@drawable/search_screen"
+    >
+
+    
+    <RelativeLayout 
+          android:layout_width="match_parent"
+   		  android:layout_height="wrap_content"
+   		  android:id ="@+id/local_search"
+        >
+       <AutoCompleteTextView 
+           android:id="@+id/search_edit" 
+           android:layout_width="fill_parent" 
+           android:layout_height="wrap_content" 
+           android:singleLine="true" 
+           android:hint = "请输入歌曲名或歌手名"
+           android:maxLength="15" 
+           android:completionThreshold="1" 
+           
+            />
+    <ImageButton 
+        android:id="@+id/search_button" 
+        android:background="@drawable/net_search_button" 
+		android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentRight="true" 
+        android:layout_marginTop="7dip"
+		/>
+     <ListView 
+		android:id = "@+id/search_result_listview"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" 
+		android:layout_weight="1" 
+		android:drawSelectorOnTop="false" 
+		android:layout_below="@+id/search_edit"
+	/>
+     <!--  
+    <ListView 
+		android:id="@id/android:list"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content" 
+		android:layout_weight="1" 
+		android:layout_below="@+id/search_edit"
+		android:drawSelectorOnTop="false"
+       
+       
+    
+		 /> -->
+    
+    <Button 
+        android:id = "@+id/network_search_button" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text = "去网上搜搜"
+        />
+    	</RelativeLayout>
+    	
+   <!--  
+    <RelativeLayout 
+          	android:layout_width="match_parent"
+   		  	android:layout_height="wrap_content"
+   		  	android:id ="@+id/net_search"
+        >
+        <AutoCompleteTextView 
+           android:id="@+id/net_search_edit" 
+           android:layout_width="fill_parent" 
+           android:layout_height="wrap_content" 
+           android:singleLine="true" 
+           android:hint = "请输入需要在网上搜索的歌曲名或歌手名"
+           android:maxLength="15" 
+           android:completionThreshold="1" 
+       		 android:layout_marginTop="120dip"
+           
+            />
+   <ImageButton 
+        android:id="@+id/network_search_button" 
+        android:background="@drawable/search_button" 
+		android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentRight="true" 
+        android:layout_marginTop="120dip"
+		/>
+         <ListView 
+		android:id = "@+id/net_search_result_listview"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" 
+		android:layout_weight="1" 
+		android:drawSelectorOnTop="false" 
+		android:layout_below="@+id/net_search_edit"
+	/>
+    <ListView 
+		android:id="@id/android:list"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content" 
+		android:layout_weight="1" 
+		android:layout_below="@+id/net_search_edit"
+		android:drawSelectorOnTop="false"
+		/>
+    
+		</RelativeLayout>
+		-->
+</RelativeLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/settings_screen" >
+    <RelativeLayout
+	    android:id="@+id/settings_first"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/song_item_bg" >
+	     
+	     <ImageButton
+	        android:id="@+id/settings_back_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true"
+	        android:background="@drawable/back_button" />
+
+	     <TextView
+	         android:layout_width="wrap_content"
+	         android:layout_height="50dp"
+	         android:layout_alignParentTop="true"
+	         android:layout_centerHorizontal="true"
+	         android:text="设置"
+	         android:gravity="center"
+	         android:textAppearance="?android:attr/textAppearanceLarge"
+	         android:textSize="35dip" />
+
+	</RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/settings_second"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:background="@drawable/settings_background">
+
+        <ImageButton
+            android:id="@+id/settings_off_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/off_button" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="1.摇一摇切歌"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="25dip" />
+
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/settings_third"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:background="@drawable/settings_background">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="2.显示桌面歌词"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="25dip" />
+
+        <CheckBox
+            android:id="@+id/lrccheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+</LinearLayout>
